@@ -1,0 +1,17 @@
+/* print.css */
+
+/* General page setup */
+@page {
+    size: A4;
+    margin: 0.5in; /* Adjust as needed */
+}
+
+/* Style elements specifically for print */
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Example: Hide any elements not needed for print */
+button {
+    display: none; /* Hides buttons in print view */
+}

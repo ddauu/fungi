@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Printable Website</title>
+    <link rel="stylesheet" href="css/styles.css"> <!-- Main styles -->
+    <link rel="stylesheet" href="css/print.css" media="print"> <!-- Print-specific styles -->
+</head>
+<body>
+    <!-- Button to toggle the Saved Images box -->
+    <button id="toggle-saved-images" class="basket-button">🧺</button>
+
+    <div id="saved-images" class="hidden">
+        <h2>Collected Fungus</h2>
+        <!-- Hidden checkbox to toggle descriptions -->
+        <input type="checkbox" id="description-toggle" class="description-checkbox">
+        <label for="description-toggle" class="description-toggle-label"></label>
+        
+        <div id="saved-list">
+            <!-- Each saved image item -->
+            <div class="saved-list-item">
+                <img src="assets/images/fungus_1.webp" alt="Image 1" class="saved-list-image">
+                <div class="saved-image-description">Image 1</div>
+            </div>
+            <!-- Additional saved images go here -->
+        </div>
+    </div>
+
+    <button id="index-button" onclick="toggleIndex()">📃</button>   
+
+    <!-- Add the new About button after the existing buttons -->
+<button class="about-button">🔍</button>
+
+<!-- About Window -->
+<input type="checkbox" id="about-toggle" class="hidden-toggle">
+<div id="about-window">
+    <h2>About This Page</h2>
+    <p>This is a gallery of fungi. Click on an image for more details or use the buttons above to interact with the page.</p>
+    <label for="about-toggle" class="close-button">Close</label>
+</div>
+
+    
+    <div id="content-wrapper">
+        <!-- Main Grid of Images -->
+        <div id="image-grid-container">
+            <div id="image-grid">
+                  <!-- 100 image containers here -->
+                  <div id="fungus-1" class="image-container">
+                    <img src="assets/images/fungus_1.webp" alt="Leratiomyces atrovirens" class="clickable-image image-1">
+                    <div class="hover-label">
+                        <span class="name">Leratiomyces atrovirens</span>
+                        <span class="description">The species is a distinctive blue-staining fungus native to New Zealand and Australia, commonly found on decaying wood in pine forests. It features a sticky, brownish cap and pale gills that darken as it matures. When bruised or handled, its stem and flesh turn a vivid blue, a unique trait that sets it apart from similar species. </span>
+                    </div>
+                </div>
+                <div id="fungus-2" class="image-container">
+                    <img src="assets/images/fungus_2.webp" alt="Hydnellum peckii" class="clickable-image image-2">
+                    <div class="hover-label">
+                        <span class="name">Hydnellum peckii</span>
+                        <span class="description">Also known as the "bleeding tooth fungus," is a striking fungus recognized for its unique, tooth-like cap that exudes red droplets, resembling blood. Found in North American and European conifer forests, it typically grows on the ground in symbiosis with trees, helping with nutrient exchange. Its surface is initially white and becomes brown with age, while the underside features spiky, tooth-like structures instead of traditional gills. Though visually intriguing, it’s inedible due to its bitter taste.</span>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/fungus_3.webp" alt="Schizophyllum commune" class="clickable-image image-3">
+                    <div class="hover-label">
+                        <span class="name">Schizophyllum commune</span>
+                        <span class="description">Known as the "split gill" fungus, this common species features a fan-shaped cap with gills that split and curl back when dry, protecting its spores. Found on decaying wood across diverse climates, it has a pale, grayish-white color and a tough, leathery texture. Its resilience allows it to rehydrate and resume growth after dry periods, playing a crucial role in wood decomposition globally.</span>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/fungus_4.webp" alt="Mycena chlorophos" class="clickable-image image-4">
+                    <div class="hover-label">
+                        <span class="name">Mycena chlorophos</span>
+                        <span class="description">This captivating fungus is known for its bioluminescent properties, emitting a faint green glow in the dark. Found in subtropical and tropical regions like Japan, Brazil, and Southeast Asia, it grows on decaying wood, often in humid conditions. With a delicate, translucent white cap and slender stem, Mycena chlorophos is relatively small but striking at night when it illuminates forest floors. The glow, caused by a chemical reaction within the fungus, serves as a unique adaptation thought to attract insects for spore dispersal.</span>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/fungus_5.webp" alt="Cookeina tricholoma" class="clickable-image image-5">
+                    <div class="hover-label">
+                        <span class="name">Cookeina tricholoma</span>
+                        <span class="description">This vibrant cup fungus, commonly found in tropical and subtropical forests, is known for its distinctive, bright orange to pinkish cup shape, often lined with fine hair-like structures along the rim. Growing on decaying wood, Cookeina tricholoma adds a splash of color to damp forest floors in regions like Southeast Asia, Central America, and parts of South America. The cup shape aids in spore dispersal by catching raindrops, which then splash the spores out into the environment. This fungus is not only visually striking but also plays a role in nutrient recycling in its ecosystem.</span>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/fungus_6.webp" alt="Mitrula paludosa" class="clickable-image image-6">
+                    <div class="hover-label">
+                        <span class="name">Mitrula paludosa</span>
+                        <span class="description">This distinctive fungus, often called the "bog beacon," is found in wet, marshy areas across Europe and parts of Asia. Mitrula paludosa features a slim, bright yellow to orange club-shaped fruiting body on a pale, slender stem, standing out against damp, decaying plant material. It thrives in waterlogged environments, typically appearing in spring and early summer. By breaking down organic matter, this fungus plays an essential role in nutrient cycling within wetland ecosystems. Its striking appearance makes it easy to spot in its boggy habitats.</span>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/fungus_7.webp" alt="Cladonia coccifera" class="clickable-image image-7">
+                    <div class="hover-label">
+                        <span class="name">Cladonia coccifera</span>
+                        <span class="description">Known as the "red-fruited cup lichen," *Cladonia coccifera* is easily recognized by its small, cup-shaped structures topped with bright red fruiting bodies. This lichen grows on soil, moss, and decaying wood in boreal and temperate regions, often in heathlands and open forests. Its vivid red caps stand out against the muted greens and browns of its surroundings, attracting attention despite its small size. As a lichen, *Cladonia coccifera* forms a symbiotic relationship between fungus and algae, contributing to soil formation and providing food and habitat for various small organisms.</span>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/fungus_8.webp" alt="Craterellus cornucopioides" class="clickable-image image-8">
+                    <div class="hover-label">
+                        <span class="name">Craterellus cornucopioides</span>
+                        <span class="description">Often called the "horn of plenty" or "black trumpet," *Craterellus cornucopioides* is a distinctive funnel-shaped mushroom with a dark gray to nearly black color, making it blend seamlessly into forest floors. Found in temperate woodlands, particularly under deciduous trees like oak and beech, this mushroom has a smooth, wavy edge and a hollow, trumpet-like form. Despite its modest appearance, it's a prized edible mushroom with a rich, earthy flavor and is highly valued in culinary circles. Its structure lacks gills, and instead, spores are released from its smooth, outer surface.</span>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/fungus_9.webp" alt="Stemonitis" class="clickable-image image-9">
+                    <div class="hover-label">
+                        <span class="name">Stemonitis</span>
+                        <span class="description">*Stemonitis* is a fascinating genus of slime molds known for its delicate, hair-like fruiting bodies that resemble tiny, dark brown to black clusters of pins or bristles. Typically found on decaying wood in damp forested areas, *Stemonitis* begins as a translucent, slimy mass before maturing into its characteristic spore-bearing stalks. These slender, cylindrical structures help release spores into the air, aiding in dispersal. While small, the intricate structure of *Stemonitis* colonies is striking under magnification, and their transformation from slime to spore stalks illustrates the unique life cycle of slime molds.</span>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/fungus_10.webp" alt="Clathrus archeri" class="clickable-image image-10">
+                    <div class="hover-label">
+                        <span class="name">Clathrus archeri</span>
+                        <span class="description">Commonly known as the "devil's fingers" or "octopus stinkhorn," *Clathrus archeri* is a bizarre and eye-catching fungus native to Australia and New Zealand but found in other regions as well. Emerging from an egg-like sac, it produces several bright red, finger-like arms that spread outward, resembling a starfish or tentacles. These arms are coated with a dark, foul-smelling spore slime, attracting flies and other insects that help disperse its spores. *Clathrus archeri* is often found in nutrient-rich soils, wood chips, or leaf litter, where its unusual appearance and odor make it hard to miss.</span>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/fungus_11.webp" alt="Gyromitra esculenta" class="clickable-image image-11">
+                    <div class="hover-label">
+                        <span class="name">Gyromitra esculenta</span>
+                        <span class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/fungus_12.webp" alt="Pezizomycotina" class="clickable-image image-12">
+                    <div class="hover-label">
+                        <span class="name">Pezizomycotina</span>
+                        <span class="description">*Pezizomycotina* is a diverse subphylum within the Ascomycota fungi, encompassing many species known for producing spores in specialized sacs called asci. Members of this group include truffles, morels, and cup fungi, as well as many plant and animal pathogens. They exhibit a wide range of forms and lifestyles, from saprotrophic (decomposing dead material) to parasitic and symbiotic, like those forming lichens. Pezizomycotina species are often found in soils, on decaying wood, and within symbiotic relationships in forests, where they play essential roles in nutrient cycling, ecological interactions, and even forming edible species highly prized in culinary contexts.</span>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/fungus_13.webp" alt="Ceratiomyxa fruticulosa" class="clickable-image image-13">
+                    <div class="hover-label">
+                        <span class="name">Ceratiomyxa fruticulosa</span>
+                        <span class="description">Commonly spotted on decaying wood in damp forests, this slime mold is recognized for its delicate, coral-like formations that range in color from white to pale yellow. Its tiny, upright structures resemble icy tufts or miniature forests and serve as spore-producing bodies, with spores dispersed through air or water. This slime mold contributes significantly to the breakdown of organic material, supporting nutrient cycling within its ecosystem.</span>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/fungus_14.webp" alt="Stropharia aeruginosa" class="clickable-image image-14">
+                    <div class="hover-label">
+                        <span class="name">Stropharia aeruginosa</span>
+                        <span class="description">Known as the "verdigris agaric" or "green roundhead," this eye-catching mushroom has a striking green to blue-green cap, often slimy or sticky in texture, with white speckles along the edges. Found in woodlands and grassy areas across temperate regions, it usually grows on decaying organic matter, particularly wood debris. The gills start pale and turn dark purple-brown as the spores mature. Although visually appealing, *Stropharia aeruginosa* is generally considered inedible and plays an important role in decomposition, aiding in nutrient cycling within its environment.</span>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/fungus_15.webp" alt="Mycena haematopus" class="clickable-image image-15">
+                    <div class="hover-label">
+                        <span class="name">Mycena haematopus</span>
+                        <span class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/fungus_16.webp" alt="Spinellus fusiger" class="clickable-image image-16">
+                    <div class="hover-label">
+                        <span class="name">Spinellus fusiger</span>
+                        <span class="description">Commonly known as the "bleeding Mycena" or "burgundy drops," this small, delicate mushroom is recognized for the dark red liquid it exudes when its stem or cap is broken. Found on decaying wood in moist forests, *Mycena haematopus* has a pale pink to reddish-brown cap and slender stem, which complements its unique bleeding feature. The gills are a light pinkish color, gradually turning darker as spores develop. This mushroom contributes to wood decomposition, supporting the health and nutrient cycling of its forest ecosystem.</span>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/fungus_17.webp" alt="Phallus indusiatus" class="clickable-image image-17">
+                    <div class="hover-label">
+                        <span class="name">Phallus indusiatus</span>
+                        <span class="description">Admired for its intricate, lacy veil, this mushroom—often called the "veiled lady"—is both visually striking and ecologically unique. Found in tropical and subtropical forests, it emerges from rich, decaying soil or wood, producing a foul-smelling slime on its cap that attracts insects to aid in spore dispersal. Despite the odor, *Phallus indusiatus* is valued as a delicacy in some cuisines and even used in traditional medicine for its potential health benefits.</span>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/fungus_18.webp" alt="Bolbitius titubans" class="clickable-image image-18">
+                    <div class="hover-label">
+                        <span class="name">Bolbitius titubans</span>
+                        <span class="description">Easily recognized by its vibrant yellow cap, which fades to a paler shade as it matures, this mushroom—commonly known as the "yellow fieldcap"—is often found on nutrient-rich soil, compost, or decaying straw. The cap has a slimy texture when moist, giving it a glistening appearance, and the gills start pale before darkening with age. *Bolbitius titubans* appears frequently after rain and has a short lifespan, often wilting within a day. Though small and delicate, it plays a vital role in breaking down organic matter, enriching the soil in grassy fields and meadows.</span>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/fungus_19.webp" alt="Amanita muscaria" class="clickable-image image-19">
+                    <div class="hover-label">
+                        <span class="name">Amanita muscaria</span>
+                        <span class="description">Known for its iconic red cap adorned with white spots, *Amanita muscaria*, or the "fly agaric," is one of the most recognizable mushrooms worldwide. Often found in forests, particularly near birch and pine trees, it forms symbiotic relationships with trees, aiding nutrient exchange. While visually striking, this mushroom is toxic if consumed raw, containing psychoactive compounds that can cause hallucinations. Its distinct appearance and cultural symbolism make it a well-known figure in folklore, art, and literature, though its ecological role in forest health is equally significant.</span>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/fungus_20.webp" alt="Calocera viscosa" class="clickable-image image-20">
+                    <div class="hover-label">
+                        <span class="name">Calocera viscosa</span>
+                        <span class="description">Nicknamed the "yellow stagshorn," this bright yellow to orange fungus features an antler-like, coral structure that stands out on the forest floor. Often found on decaying conifer wood, *Calocera viscosa* has a sticky, gelatinous texture, especially in humid conditions. By decomposing wood, it aids in nutrient cycling, enriching the forest ecosystem. Its vibrant color and branching form make it easy to spot amidst woodland debris.</span>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/fungus_21.webp" alt="Chlorociboria aeruginascens" class="clickable-image image-21">
+                    <div class="hover-label">
+                        <span class="name">Chlorociboria aeruginascens</span>
+                        <span class="description">With its distinctive blue-green coloring, *Chlorociboria aeruginascens* creates striking, cup-shaped fruiting bodies on decaying wood, which it stains a vibrant green. This wood-staining fungus is often found in temperate forests, where it grows on fallen branches or stumps, leaving behind a greenish tint that’s been valued historically in woodworking and marquetry. Its unique pigmentation is due to a compound called xylindein, making it both a fascinating visual element on the forest floor and an important agent in wood decomposition.</span>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/fungus_22.webp" alt="Ciboria caucus" class="clickable-image image-22">
+                    <div class="hover-label">
+                        <span class="name">Ciboria caucus</span>
+                        <span class="description">This small, cup-shaped fungus grows on acorns and other nuts, giving them a distinctive appearance with its tiny, dark brown to black fruiting bodies. *Ciboria caucus* thrives in damp forest floors, particularly in deciduous woodlands where it targets fallen acorns. By breaking down the outer shell, it plays a role in the natural decomposition process, recycling nutrients back into the soil. Its diminutive size and specific habitat make it easy to overlook but essential for nutrient cycling in its ecosystem.</span>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/fungus_23.webp" alt="Encoelia furfuracea" class="clickable-image image-23">
+                    <div class="hover-label">
+                        <span class="name">Encoelia furfuracea</span>
+                        <span class="description">Appearing as clusters of small, brown cups on dead hazel branches, this fungus adds subtle texture to the forest in winter and early spring. With a velvety outer surface and smooth, tan interior, *Encoelia furfuracea* prefers shaded, damp woodlands where it thrives on decaying wood. Its role in breaking down dead branches contributes to nutrient cycling, supporting forest health and biodiversity.</span>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/fungus_24.webp" alt="Paurocotylis pila" class="clickable-image image-24">
+                    <div class="hover-label">
+                        <span class="name">Paurocotylis pila</span>
+                        <span class="description">This rare, truffle-like fungus is found primarily in New Zealand, often buried beneath the soil in forests and grassy areas. *Paurocotylis pila* has a rounded, ball-shaped form with a striking pink to reddish interior when cut open, contrasting with its outer skin. Growing underground, it relies on animals for spore dispersal, which occurs when the fruiting body is disturbed or consumed. Its unique color and hidden growth make it an intriguing and elusive part of the forest ecosystem.</span>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/fungus_25.webp" alt="Xylaria hypoxylon" class="clickable-image image-25">
+                    <div class="hover-label">
+                        <span class="name">Xylaria hypoxylon</span>
+                        <span class="description">A saprotrophic fungus found on decaying wood, particularly hardwood, with black, club-shaped fruiting bodies tipped in white, giving it a burnt-candle appearance. It plays a key role in breaking down organic material and recycling nutrients in forest ecosystems.</span>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/fungus_26.webp" alt="Spathularia flavida" class="clickable-image image-26">
+                    <div class="hover-label">
+                        <span class="name">Spathularia flavida</span>
+                        <span class="description">A distinctive fungus with bright yellow, spatula-like fruiting bodies, commonly found in temperate regions across North America, Europe, and parts of Asia. It typically grows in coniferous forests, thriving among moss, leaf litter, or decaying wood in moist, shaded areas.</span>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/fungus_27.webp" alt="Trichoglossum hirsutum" class="clickable-image image-27">
+                    <div class="hover-label">
+                        <span class="name">Trichoglossum hirsutum</span>
+                        <span class="description">This distinctive earth tongue fungus stands out with its dark, club-shaped fruiting body covered in fine, hair-like structures, giving it a velvety texture. Trichoglossum hirsutum typically grows in mossy or grassy areas of temperate forests, often on nutrient-poor soil. Its blackish coloration and slender form make it blend into its surroundings, but its texture sets it apart upon closer inspection. By decomposing organic matter, it plays an important role in nutrient recycling and soil health in its ecosystem.</span>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/fungus_28.webp" alt="Scutellinia trechispora" class="clickable-image image-28">
+                    <div class="hover-label">
+                        <span class="name">Scutellinia trechispora</span>
+                        <span class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/fungus_29.webp" alt="Nectria cinnabarina" class="clickable-image image-29">
+                    <div class="hover-label">
+                        <span class="name">Nectria cinnabarina</span>
+                        <span class="description">This striking fungus produces vivid, coral-red to orange-pink fruiting bodies, often seen as clusters of small, spherical structures on dead or dying wood. Nectria cinnabarina typically colonizes hardwood branches, particularly in damp and shaded environments. Over time, the bright fruiting bodies may darken to a deeper red or brown as they mature. By breaking down dead wood, it contributes to decomposition and nutrient cycling, playing a key role in forest ecosystems. Its bold color makes it a noticeable feature on decaying branches.</span>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/fungus_30.webp" alt="Chlorociboria aeruginosa" class="clickable-image image-30">
+                    <div class="hover-label">
+                        <span class="name">Chlorociboria aeruginosa</span>
+                        <span class="description">This wood-staining fungus is renowned for its vibrant blue-green coloration, which leaves decaying wood with a striking green tint. Chlorociboria aeruginosa produces small, cup-shaped fruiting bodies that often go unnoticed compared to the stained wood it leaves behind. Found in temperate forests, it thrives on fallen branches and stumps, contributing to the decomposition process. The pigment, xylindein, has been historically prized in woodworking for creating decorative green-tinted inlays, making this fungus both ecologically and artistically significant.</span>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/fungus_31.webp" alt="Ascocoryne sarcoides" class="clickable-image image-31">
+                    <div class="hover-label">
+                        <span class="name">Ascocoryne sarcoides</span>
+                        <span class="description">This gelatinous fungus forms clusters of small, purple to pinkish fruiting bodies, often resembling blobs or discs on decaying wood. *Ascocoryne sarcoides* is typically found on hardwood logs in damp, shaded forests. Its rubbery texture and vivid color make it a curious feature of the forest floor. By breaking down dead wood, it aids in nutrient cycling and supports the health of its ecosystem. Occasionally referred to as the "purple jellydisc," it adds a splash of color to decaying logs during its growing season..</span>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/fungus_32.webp" alt="Ramaria botrytis" class="clickable-image image-32">
+                    <div class="hover-label">
+                        <span class="name">Ramaria botrytis</span>
+                        <span class="description">This coral-like fungus stands out with its pale pink to reddish tips, resembling a cluster of branching antlers. *Ramaria botrytis* typically grows on the ground in deciduous forests, often forming symbiotic relationships with nearby trees. Its dense, branching structure and subtle coloration make it a striking addition to forest floors in late summer and autumn. While some consider it edible when young, proper identification is crucial, as similar species can be toxic. Its role in the ecosystem includes nutrient cycling and supporting forest biodiversity.</span>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/fungus_33.webp" alt="Clathrus ruber" class="clickable-image image-33">
+                    <div class="hover-label">
+                        <span class="name">Clathrus ruber</span>
+                        <span class="description">This peculiar fungus, often referred to as the "red cage," features a striking lattice-like structure with a vivid red color. *Clathrus ruber* emerges from an egg-shaped sac, eventually expanding into its mature, cage-like form. Found in nutrient-rich soils, gardens, and woodlands, it produces a foul-smelling slime to attract insects that aid in spore dispersal. Its unique appearance and odor make it both fascinating and easily recognizable in its natural environment.</span>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/fungus_34.webp" alt="Phallus impudicus" class="clickable-image image-34">
+                    <div class="hover-label">
+                        <span class="name">Phallus impudicus</span>
+                        <span class="description">This fungus, commonly called the "stinkhorn," is notable for its tall, phallic shape and a slimy, foul-smelling cap that attracts flies to aid in spore dispersal. *Phallus impudicus* emerges from an egg-like structure, quickly growing into its mature form. Found in woodlands and gardens, it thrives on decaying organic matter, playing a role in decomposition. Despite its unpleasant odor, its unique life cycle and striking appearance make it an intriguing part of forest ecosystems.</span>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/fungus_35.webp" alt="Phallus rubicundus" class="clickable-image image-35">
+                    <div class="hover-label">
+                        <span class="name">Phallus rubicundus</span>
+                        <span class="description">This unusual fungus, often referred to as the "reddish stinkhorn," features a slender, reddish-orange stalk topped with a sticky, foul-smelling cap. *Phallus rubicundus* emerges from an egg-like structure and can be found in wood chips, gardens, and sandy soils, especially in warm climates. Its odor attracts flies and other insects, which help disperse its spores. Though its smell may be off-putting, it plays an important role in breaking down organic matter and recycling nutrients in its environment.</span>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/fungus_36.webp" alt="Lycoperdon excipuliforme" class="clickable-image image-36">
+                    <div class="hover-label">
+                        <span class="name">Lycoperdon excipuliforme</span>
+                        <span class="description">This puffball fungus, often called the "pestle puffball" or "stump puffball," has a distinctive shape with a bulbous base tapering into a narrower stem-like section. *Lycoperdon excipuliforme* is commonly found on decaying wood or rich forest soil in temperate regions. When mature, its outer skin cracks to release a cloud of brown spores when disturbed. Initially white and firm, it turns yellowish or brown as it ages. This fungus contributes to decomposition, aiding in nutrient recycling within forest ecosystems.</span>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/fungus_37.webp" alt="Pleurotus ostreatus" class="clickable-image image-37">
+                    <div class="hover-label">
+                        <span class="name">Pleurotus ostreatus</span>
+                        <span class="description">This well-known edible fungus, commonly called the "oyster mushroom," is prized for its fan-shaped, smooth caps that range in color from pale gray to brown. *Pleurotus ostreatus* grows on decaying wood, forming clusters on logs, stumps, or fallen branches, and thrives in both temperate and subtropical forests. Besides its culinary value, it plays an essential role in breaking down tough lignin in wood, contributing to nutrient cycling. It’s also studied for its potential in bioremediation due to its ability to degrade environmental pollutants.</span>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/fungus_38.webp" alt="Exidia nucleata" class="clickable-image image-38">
+                    <div class="hover-label">
+                        <span class="name">Exidia nucleata</span>
+                        <span class="description">This jelly fungus, often referred to as "crystal brain," appears as translucent, gelatinous blobs on decaying wood, typically in damp, shaded forests. *Exidia nucleata* forms irregular, soft masses that sometimes have a whitish or crystalline appearance, giving it a unique and almost otherworldly look. It thrives on dead hardwood, aiding in decomposition and nutrient cycling. Its delicate, wet texture and subtle translucence make it a fascinating find on the forest floor.</span>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/fungus_39.webp" alt="Pseudohydnum gelatinosum" class="clickable-image image-39">
+                    <div class="hover-label">
+                        <span class="name">Pseudohydnum gelatinosum</span>
+                        <span class="description">Often called the "toothed jelly fungus" or "jelly tooth," this translucent, gelatinous fungus has a pale gray to brownish body with a soft, rubbery texture. Pseudohydnum gelatinosum features spiky, tooth-like structures on its underside, where spores are produced. Found on decaying wood in damp forests, it thrives in both temperate and boreal regions. Its unique appearance and texture make it an intriguing component of forest ecosystems, contributing to wood decomposition and nutrient cycling.</span>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/fungus_40.webp" alt="Boletopsis perplexa" class="clickable-image image-40">
+                    <div class="hover-label">
+                        <span class="name">Boletopsis perplexa</span>
+                        <span class="description">This rare, mycorrhizal fungus forms symbiotic relationships with coniferous trees, typically appearing in sandy or mossy soils. *Boletopsis perplexa* features a thick, pale gray to brownish cap with a velvety texture and a porous underside, rather than gills. Found in temperate forests, it plays an important role in nutrient exchange between soil and trees. Though not often encountered, its distinctive look and ecological significance make it an intriguing species in woodland environments.</span>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/fungus_41.webp" alt="Morchella esculenta" class="clickable-image image-41">
+                    <div class="hover-label">
+                        <span class="name">Morchella esculenta</span>
+                        <span class="description">This highly prized edible mushroom, commonly referred to as the "morel," features a honeycomb-like, ridged cap that ranges in color from pale yellow to tan. *Morchella esculenta* typically grows in forests, often near deciduous trees such as ash, elm, and oak, especially in spring. Its hollow interior and distinctive cap make it easily recognizable to foragers. Beyond its culinary value, this fungus plays a role in breaking down organic matter and forming symbiotic relationships with trees, contributing to forest health.</span>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/fungus_42.webp" alt="Psilocybe semilanceata" class="clickable-image image-42">
+                    <div class="hover-label">
+                        <span class="name">Psilocybe semilanceata</span>
+                        <span class="description">Commonly called the "liberty cap," this small mushroom is known for its distinctive conical cap with a slight point at the top. *Psilocybe semilanceata* typically grows in grassy fields and meadows, often in nutrient-rich soils associated with grazing animals. Its pale brown to tan color and delicate structure make it easily overlooked in its natural habitat. This mushroom is notable for its psychoactive properties due to compounds like psilocybin and psilocin, giving it cultural and scientific significance.</span>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/fungus_43.webp" alt="Ustilago maydis" class="clickable-image image-43">
+                    <div class="hover-label">
+                        <span class="name">Ustilago maydis</span>
+                        <span class="description">This fungus, often referred to as "corn smut," is a plant pathogen that infects maize, forming large, grayish-black galls filled with spores on ears, stalks, and leaves. *Ustilago maydis* is both agriculturally significant as a crop disease and a culinary delicacy in some cultures, particularly in Mexican cuisine, where it is known as *huitlacoche*. It thrives by parasitizing corn plants, disrupting normal growth while creating nutrient-rich galls. This dual identity as a pest and a delicacy makes it a fascinating subject in both agriculture and gastronomy.</span>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/fungus_44.webp" alt="Grifola frondosa" class="clickable-image image-44">
+                    <div class="hover-label">
+                        <span class="name">Grifola frondosa</span>
+                        <span class="description">This fungus, commonly called "Maitake" or "Hen of the Woods," is a polypore mushroom that grows in clusters at the base of trees, particularly oaks. *Grifola frondosa* is celebrated for its earthy flavor and tender texture, making it a favorite in culinary dishes. In traditional medicine, it has been used for its potential immune-boosting properties, particularly in East Asian cultures. The mushroom's intricate, fan-like structures create a striking visual appeal and a rich umami flavor profile. As a decomposer, it plays an essential role in breaking down organic matter in forests.</span>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/fungus_45.webp" alt="Rubroboletus satanas" class="clickable-image image-45">
+                    <div class="hover-label">
+                        <span class="name">Rubroboletus satanas</span>
+                        <span class="description">Known as "Satan’s Bolete," this fungus is a striking yet toxic member of the bolete family. With its bulbous, red-streaked stem and vibrant yellow pores, *Rubroboletus satanas* is both beautiful and dangerous. Found in warm deciduous forests, it grows in symbiotic relationships with trees such as oak and chestnut. Although visually enticing, ingestion of this mushroom can cause severe gastrointestinal distress. Its unique coloration and ecological role as a mycorrhizal partner make it a captivating subject of study for mycologists.</span>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/fungus_46.webp" alt="Hericium erinaceus" class="clickable-image image-46">
+                    <div class="hover-label">
+                        <span class="name">Hericium erinaceus</span>
+                        <span class="description">Often called "Lion’s Mane" due to its cascading, white spines resembling a lion’s mane, this fungus is both a medicinal powerhouse and a culinary delight. *Hericium erinaceus* grows on hardwood trees, primarily in late summer and fall, and is known for its ability to stimulate nerve growth factor (NGF), making it a focus of neuroprotective research. Its delicate, seafood-like flavor and meaty texture have earned it a place in gourmet cuisine. This saprophytic fungus also plays an important ecological role in recycling nutrients from decaying wood.</span>
+                    </div>
+                </div>                
+                <div class="image-container">
+                    <img src="assets/images/fungus_47.webp" alt="Usnea wirthii" class="clickable-image image-47">
+                    <div class="hover-label">
+                        <span class="name">Usnea wirthii</span>
+                        <span class="description">A lichenized fungus, *Usnea wirthii* forms intricate, filamentous structures hanging from tree branches like silvery threads. It is highly sensitive to air pollution, serving as a natural bioindicator of environmental health. This species thrives in cool, moist habitats and contributes to the ecosystem by providing shelter for microfauna and absorbing pollutants.</span>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/fungus_48.webp" alt="Peziza sp." class="clickable-image image-48">
+                    <div class="hover-label">
+                        <span class="name">Peziza sp.</span>
+                        <span class="description">Belonging to the cup fungi group, *Peziza* species are characterized by their shallow, saucer-like fruiting bodies. They typically grow on decaying wood or soil and play a key role in breaking down organic material. While some species are edible, others may be toxic, requiring careful identification for consumption.</span>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/fungus_49.webp" alt="Sphaerobolus stellatus" class="clickable-image image-49">
+                    <div class="hover-label">
+                        <span class="name">Sphaerobolus stellatus</span>
+                        <span class="description">Commonly known as the "cannonball fungus," *Sphaerobolus stellatus* is famous for its unique spore dispersal mechanism. Its fruiting bodies explosively eject spore packets, reaching distances of up to six meters. Found on decaying wood, this fungus is both a fascinating spectacle and an efficient decomposer.</span>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/fungus_50.webp" alt="Sparassis crispa" class="clickable-image image-50">
+                    <div class="hover-label">
+                        <span class="name">Sparassis crispa</span>
+                        <span class="description">Often called the "Cauliflower Mushroom," *Sparassis crispa* forms large, ruffled, coral-like structures at the base of conifer trees. It is prized for its nutty flavor and crunchy texture in culinary dishes. As a parasite, it can weaken trees but also plays a decomposer role in forest ecosystems.</span>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/fungus_51.webp" alt="Solorina saccata" class="clickable-image image-51">
+                    <div class="hover-label">
+                        <span class="name">Solorina saccata</span>
+                        <span class="description">This lichenized fungus, *Solorina saccata*, thrives in nutrient-poor soils and alpine regions, forming symbiotic relationships with photosynthetic algae. Its leathery thallus and brownish spores enable it to survive harsh environments, contributing to soil stabilization and nutrient cycling in extreme ecosystems.</span>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/fungus_52.webp" alt="Laetiporus cincinnatus" class="clickable-image image-52">
+                    <div class="hover-label">
+                        <span class="name">Laetiporus cincinnatus</span>
+                        <span class="description">Known as the "White-Pored Chicken of the Woods," this bright orange fungus grows at the base of hardwood trees. *Laetiporus cincinnatus* is valued for its firm, chicken-like texture and is a favorite among foragers. As a wood-decaying fungus, it recycles nutrients and enhances soil fertility.</span>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/fungus_53.webp" alt="Laetiporus conifericola" class="clickable-image image-53">
+                    <div class="hover-label">
+                        <span class="name">Laetiporus conifericola</span>
+                        <span class="description">This species of "Chicken of the Woods" fungus grows exclusively on conifer trees, particularly in coastal forests. *Laetiporus conifericola* has a striking golden hue and plays a crucial role in breaking down tough lignin in wood, though it is often considered inedible due to potential toxins from its conifer host.</span>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/fungus_54.webp" alt="Calocera cornea" class="clickable-image image-54">
+                    <div class="hover-label">
+                        <span class="name">Calocera cornea</span>
+                        <span class="description">Known as "Small Stagshorn," *Calocera cornea* is a jelly fungus with delicate, antler-like branches. It grows on decaying wood and thrives in humid conditions. Despite its fragile appearance, this fungus is a robust decomposer, aiding in nutrient recycling in forest ecosystems.</span>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/fungus_55.webp" alt="Terana caerulea" class="clickable-image image-55">
+                    <div class="hover-label">
+                        <span class="name">Terana caerulea</span>
+                        <span class="description">Also known as "Cobalt Crust," *Terana caerulea* is renowned for its vivid blue coloration. This crust fungus forms thin, velvety patches on dead wood, contributing to decomposition. Its unique pigmentation has made it a subject of interest for both scientists and nature enthusiasts.</span>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/fungus_56.webp" alt="Hericium ramosum" class="clickable-image image-56">
+                    <div class="hover-label">
+                        <span class="name">Hericium ramosum</span>
+                        <span class="description">A close relative of Lion’s Mane, *Hericium ramosum* features cascading clusters of branched, spiny fruiting bodies. Found on decaying hardwoods, it is both edible and medicinal, offering neuroprotective benefits. Its delicate appearance belies its role as a powerful decomposer in forest ecosystems.</span>
+                    </div>
+                </div>                
+                <div class="image-container">
+                    <img src="assets/images/fungus_57.webp" alt="Candelaria concolor" class="clickable-image image-57">
+                    <div class="hover-label">
+                        <span class="name">Candelaria concolor</span>
+                        <span class="description">Known as the "Golden Shield Lichen," *Candelaria concolor* is a vibrant yellow lichen often found on tree bark, rocks, or soil. It thrives in urban areas and forests, serving as a bioindicator of air quality due to its sensitivity to pollution. This species contributes to nutrient cycling and provides shelter for microfauna.</span>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/fungus_58.webp" alt="Dendrocollybia racemosa" class="clickable-image image-58">
+                    <div class="hover-label">
+                        <span class="name">Dendrocollybia racemosa</span>
+                        <span class="description">This unusual fungus grows on decaying mushrooms, producing delicate, white fruiting bodies with branching structures. *Dendrocollybia racemosa* is rare and thrives in damp, forested environments, playing a unique role in decomposing other fungi and recycling their nutrients back into the ecosystem.</span>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/fungus_59.webp" alt="Caloscypha fulgens" class="clickable-image image-59">
+                    <div class="hover-label">
+                        <span class="name">Caloscypha fulgens</span>
+                        <span class="description">Commonly called the "Golden Cup Fungus," *Caloscypha fulgens* displays vivid orange to yellow hues and grows in coniferous forests during spring. Its fruiting bodies resemble small, fiery cups, and it is often associated with decaying wood. This fungus adds a splash of color to forest floors while aiding decomposition.</span>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/fungus_60.webp" alt="Hygrophorus eburneus" class="clickable-image image-60">
+                    <div class="hover-label">
+                        <span class="name">Hygrophorus eburneus</span>
+                        <span class="description">Known as the "Ivory Waxcap," *Hygrophorus eburneus* is a slimy, pure-white mushroom found in moist, grassy habitats or under deciduous trees. Its waxy cap and smooth stem make it a visually striking species. This fungus is important for nutrient recycling in its environment.</span>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/fungus_61.webp" alt="Graphis scripta" class="clickable-image image-61">
+                    <div class="hover-label">
+                        <span class="name">Graphis scripta</span>
+                        <span class="description">Often referred to as the "Script Lichen," *Graphis scripta* features thin, black lines resembling script written on tree bark. This crustose lichen thrives in humid, shaded forests and plays a role in nutrient cycling and air purification. Its intricate patterns make it a favorite among nature enthusiasts.</span>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/fungus_62.webp" alt="Lycoperdon perlatum" class="clickable-image image-62">
+                    <div class="hover-label">
+                        <span class="name">Lycoperdon perlatum</span>
+                        <span class="description">Known as the "Common Puffball," *Lycoperdon perlatum* is a small, white fungus covered in spiny projections that release clouds of spores when mature. Found in forests and grasslands, this edible species is both a delicacy when young and a key decomposer in its ecosystem.</span>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/fungus_63.webp" alt="Hygrocybe acutoconica" class="clickable-image image-63">
+                    <div class="hover-label">
+                        <span class="name">Hygrocybe acutoconica</span>
+                        <span class="description">This bright, waxy mushroom is a member of the waxcap family, often found in nutrient-poor grasslands. *Hygrocybe acutoconica* has a conical, vibrant yellow cap and is a bioindicator of undisturbed habitats. Its striking appearance adds color to natural landscapes.</span>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/fungus_64.webp" alt="Heterobasidion annosum" class="clickable-image image-64">
+                    <div class="hover-label">
+                        <span class="name">Heterobasidion annosum</span>
+                        <span class="description">A significant forest pathogen, *Heterobasidion annosum* causes root rot in conifers, leading to economic losses in forestry. Despite its destructive tendencies, it plays a role in nutrient cycling by decomposing dead wood. Its large, woody fruiting bodies are often found at tree bases.</span>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/fungus_65.webp" alt="Cryptoporus volvatus" class="clickable-image image-65">
+                    <div class="hover-label">
+                        <span class="name">Cryptoporus volvatus</span>
+                        <span class="description">Known as the "Veiled Polypore," *Cryptoporus volvatus* grows on coniferous trees, often following bark beetle infestations. Its enclosed, veil-like fruiting bodies protect spores from harsh environments, making it an adaptive decomposer of deadwood.</span>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/fungus_66.webp" alt="Pluteus cervinus" class="clickable-image image-66">
+                    <div class="hover-label">
+                        <span class="name">Pluteus cervinus</span>
+                        <span class="description">Commonly called the "Deer Mushroom," *Pluteus cervinus* is a saprobic species found on decaying wood. Its brown, leathery cap and free gills distinguish it from similar species. This fungus plays an essential role in breaking down dead organic material in forests.</span>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/fungus_67.webp" alt="Ophiocordyceps" class="clickable-image image-67">
+                    <div class="hover-label">
+                        <span class="name">Ophiocordyceps</span>
+                        <span class="description">This genus of parasitic fungi includes species that infect insects, manipulating their behavior to aid spore dispersal. *Ophiocordyceps* species are famed for their intricate life cycles and potential medicinal applications, including immunomodulatory and anti-cancer properties.</span>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/fungus_68.webp" alt="Ascocoryne sarcoides" class="clickable-image image-68">
+                    <div class="hover-label">
+                        <span class="name">Ascocoryne sarcoides</span>
+                        <span class="description">This vibrant, jelly-like fungus, also called "Purple Jellydisc," grows in clusters on decaying wood. *Ascocoryne sarcoides* adds color to forest floors and serves as an important decomposer. Recent studies have explored its potential for producing bioactive compounds.</span>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/fungus_69.webp" alt="Xylania Polymorpha" class="clickable-image image-69">
+                    <div class="hover-label">
+                        <span class="name">Xylaria polymorpha</span>
+                        <span class="description">Known as "Dead Man's Fingers," *Xylaria polymorpha* produces dark, finger-like structures that emerge from decaying wood. This fungus is an efficient decomposer, recycling nutrients in forest ecosystems. Its eerie appearance makes it a fascinating find for foragers and mycologists alike.</span>
+                    </div>
+                </div>                
+                <div class="image-container">
+                    <img src="assets/images/fungus_70.webp" alt="Entoloma hochstetteri" class="clickable-image image-70">
+                    <div class="hover-label">
+                        <span class="name">Entoloma hochstetteri</span>
+                        <span class="description">This striking blue mushroom, native to New Zealand, is known for its vibrant indigo coloration due to unique pigments. It grows in native forests and is a symbol of the region’s unique biodiversity.</span>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/fungus_71.webp" alt="Hypholoma brunneum" class="clickable-image image-71">
+                    <div class="hover-label">
+                        <span class="name">Hypholoma brunneum</span>
+                        <span class="description">Commonly found on decaying wood, this species features brownish caps and clustered growth. This saprophytic mushroom aids in nutrient cycling and is often mistaken for edible species.</span>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/fungus_72.webp" alt="Cortinarius porphyroideus" class="clickable-image image-72">
+                    <div class="hover-label">
+                        <span class="name">Cortinarius porphyroideus</span>
+                        <span class="description">Known as the "Purple Pouch Fungus," this rare species is found in New Zealand. Its vivid purple hue and association with native beech forests make it a remarkable sight.</span>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/fungus_73.webp" alt="Schizophyllum commune" class="clickable-image image-73">
+                    <div class="hover-label">
+                        <span class="name">Schizophyllum commune</span>
+                        <span class="description">This cosmopolitan fungus, also known as "Split Gill," is noted for its gilled, fan-shaped fruiting bodies. It can survive in diverse climates and is a model organism in genetic research.</span>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/fungus_74.webp" alt="Favolaschia calocera" class="clickable-image image-74">
+                    <div class="hover-label">
+                        <span class="name">Favolaschia calocera</span>
+                        <span class="description">This bright orange mushroom, sometimes called the "Orange Pore Fungus," has distinctive, perforated fruiting bodies. Originally from Madagascar, it has spread globally, often thriving on decaying wood in urban areas.</span>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/fungus_75.webp" alt="Crepidotus versutus" class="clickable-image image-75">
+                    <div class="hover-label">
+                        <span class="name">Crepidotus versutus</span>
+                        <span class="description">This small, white bracket fungus grows on decaying wood and is characterized by its fan-shaped caps. It is essential for forest ecosystems, aiding in the decomposition of organic material.</span>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/fungus_76.webp" alt="Campanella species" class="clickable-image image-76">
+                    <div class="hover-label">
+                        <span class="name">Campanella species</span>
+                        <span class="description">Members of the Campanella genus are small, bell-shaped fungi often found on rotting wood. Their delicate structures and role as decomposers contribute to nutrient cycling in forest habitats.</span>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/fungus_77.webp" alt="Lycoperdon pyriforme" class="clickable-image image-77">
+                    <div class="hover-label">
+                        <span class="name">Lycoperdon pyriforme</span>
+                        <span class="description">Known as the "Pear-Shaped Puffball," this fungus releases clouds of spores when mature. It grows in clusters on rotting wood and is an essential decomposer in forest ecosystems.</span>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/fungus_78.webp" alt="Podoscypha petalodes" class="clickable-image image-78">
+                    <div class="hover-label">
+                        <span class="name">Podoscypha petalodes</span>
+                        <span class="description">With its petal-like fruiting bodies, this visually striking fungus is found on soil and wood debris. It is known for its intricate, flower-like appearance and ecological role as a decomposer.</span>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/fungus_79.webp" alt="Aleuria aurantia" class="clickable-image image-79">
+                    <div class="hover-label">
+                        <span class="name">Aleuria aurantia</span>
+                        <span class="description">Commonly called the "Orange Peel Fungus," this brightly colored mushroom resembles an orange rind. Found on bare soil, it adds color to landscapes and plays a role in nutrient recycling.</span>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/fungus_80.webp" alt="Cladonia asahinae" class="clickable-image image-80">
+                    <div class="hover-label">
+                        <span class="name">Cladonia asahinae</span>
+                        <span class="description">This lichen species is known for its intricate, branching structure and greenish-gray coloration. Found on rocks or soil, it contributes to nutrient cycling in various ecosystems.</span>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/fungus_81.webp" alt="Mycena parsonsii" class="clickable-image image-81">
+                    <div class="hover-label">
+                        <span class="name">Mycena parsonsii</span>
+                        <span class="description">A delicate mushroom found in forested habitats, *Mycena parsonsii* is recognized by its translucent cap and slender stalk. It plays a key role in decomposing leaf litter and enriching soil nutrients.</span>
+                    </div>
+                </div>                
+                <div class="image-container">
+                    <img src="assets/images/fungus_82.webp" alt="Mycena species" class="clickable-image image-82">
+                    <div class="hover-label">
+                        <span class="name">Mycena species</span>
+                        <span class="description">The *Mycena* genus includes small, delicate mushrooms often found in damp, forested areas. Known for their translucent caps and bioluminescent properties in some species, they are important decomposers of organic matter.</span>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/fungus_83.webp" alt="Guepiniopsis alpina" class="clickable-image image-83">
+                    <div class="hover-label">
+                        <span class="name">Guepiniopsis alpina</span>
+                        <span class="description">This bright orange jelly fungus thrives in alpine regions and decaying wood. Its gelatinous texture and vibrant color make it a standout species in colder climates, contributing to wood decomposition.</span>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/fungus_84.webp" alt="Dermocybe canaria" class="clickable-image image-84">
+                    <div class="hover-label">
+                        <span class="name">Dermocybe canaria</span>
+                        <span class="description">Known for its vivid yellow-orange coloration, *Dermocybe canaria* contains pigments that have been used as natural dyes. Found in forested habitats, it associates with tree roots in symbiotic relationships.</span>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/fungus_85.webp" alt="Leratiomyces ceres" class="clickable-image image-85">
+                    <div class="hover-label">
+                        <span class="name">Leratiomyces ceres</span>
+                        <span class="description">Commonly called the "Redlead Roundhead," this fungus is easily recognized by its bright red cap. Found in wood chips and disturbed soils, it thrives in urban areas and plays a role in decomposing organic debris.</span>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/fungus_86.webp" alt="Armillaria novaezealandae" class="clickable-image image-86">
+                    <div class="hover-label">
+                        <span class="name">Armillaria novaezealandae</span>
+                        <span class="description">This parasitic fungus, also known as the "Honey Fungus," forms large clusters of yellow-brown fruiting bodies. It spreads through tree roots and contributes to forest nutrient cycling, albeit sometimes causing tree death.</span>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/fungus_87.webp" alt="Amanita muscaria" class="clickable-image image-87">
+                    <div class="hover-label">
+                        <span class="name">Amanita muscaria</span>
+                        <span class="description">One of the most iconic mushrooms, *Amanita muscaria* features a bright red cap with white spots. While toxic, it has been culturally significant in folklore and is often associated with magical and mythical themes.</span>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/fungus_88.webp" alt="Gymnopilus" class="clickable-image image-88">
+                    <div class="hover-label">
+                        <span class="name">Gymnopilus</span>
+                        <span class="description">The *Gymnopilus* genus includes bright orange-brown mushrooms often found on decaying wood. Some species contain psychoactive compounds, while others play ecological roles as decomposers.</span>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/fungus_89.webp" alt="Oudemansiella australis" class="clickable-image image-89">
+                    <div class="hover-label">
+                        <span class="name">Oudemansiella australis</span>
+                        <span class="description">This striking fungus has a translucent, slimy cap and grows on decaying wood. *Oudemansiella australis* plays a significant role in forest ecosystems by aiding decomposition and nutrient recycling.</span>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/fungus_90.webp" alt="Gliophorus graminicolor" class="clickable-image image-90">
+                    <div class="hover-label">
+                        <span class="name">Gliophorus graminicolor</span>
+                        <span class="description">Known for its slimy texture and greenish coloration, this mushroom thrives in grasslands. *Gliophorus graminicolor* is a member of the waxcap family and is often used as an indicator of habitat health.</span>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/fungus_91.webp" alt="Cortinarius species" class="clickable-image image-91">
+                    <div class="hover-label">
+                        <span class="name">Cortinarius species</span>
+                        <span class="description">The *Cortinarius* genus includes a wide variety of mushrooms, often with distinctive veils and rich earthy colors. These fungi form symbiotic relationships with trees and are crucial for nutrient exchange in forest soils.</span>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/fungus_92.webp" alt="Ileodictyon cibarium" class="clickable-image image-92">
+                    <div class="hover-label">
+                        <span class="name">Ileodictyon cibarium</span>
+                        <span class="description">Commonly called the "Basket Fungus," this species has a distinctive net-like structure. Native to New Zealand and Australia, it emerges from the ground and emits a strong odor to attract spore-dispersing insects.</span>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/fungus_93.webp" alt="Hypholoma fasciculare" class="clickable-image image-93">
+                    <div class="hover-label">
+                        <span class="name">Hypholoma fasciculare</span>
+                        <span class="description">Known as the "Sulphur Tuft," this bright yellow-green mushroom grows in clusters on decaying wood. *Hypholoma fasciculare* is toxic and plays an essential role as a decomposer in forest ecosystems.</span>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/fungus_94.webp" alt="Weraroa erythrocephala" class="clickable-image image-94">
+                    <div class="hover-label">
+                        <span class="name">Weraroa erythrocephala</span>
+                        <span class="description">This pouch-like fungus is native to New Zealand and is recognized by its reddish fruiting body. *Weraroa erythrocephala* is a unique member of the fungal kingdom, with ecological significance in its native habitats.</span>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/fungus_95.webp" alt="Geastrum triplex" class="clickable-image image-95">
+                    <div class="hover-label">
+                        <span class="name">Geastrum triplex</span>
+                        <span class="description">Commonly known as the "Collared Earthstar," this fungus has a star-like appearance when mature. It grows on forest floors and aids in nutrient recycling by decomposing organic matter.</span>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/fungus_96.webp" alt="Mycena subcyanocephala" class="clickable-image image-96">
+                    <div class="hover-label">
+                        <span class="name">Mycena subcyanocephala</span>
+                        <span class="description">This tiny mushroom is found on decaying wood and is notable for its bluish tint. As part of the *Mycena* genus, it contributes to nutrient cycling in forest ecosystems.</span>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/fungus_97.webp" alt="Mycena luxaeterna" class="clickable-image image-97">
+                    <div class="hover-label">
+                        <span class="name">Mycena luxaeterna</span>
+                        <span class="description">A bioluminescent mushroom, *Mycena luxaeterna* emits a soft green glow in dark environments. Found in tropical regions, it thrives on decaying wood and is a marvel of natural luminescence.</span>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/fungus_98.webp" alt="Fomes fomentarius" class="clickable-image image-98">
+                    <div class="hover-label">
+                        <span class="name">Fomes fomentarius</span>
+                        <span class="description">Also known as the "Tinder Fungus," this polypore grows on tree trunks and has been historically used as fire-starting material.
+                        </div>
+                    </div>
+                    <div class="image-container">
+                        <img src="assets/images/fungus_99.webp" alt="Auricularia auricula-judae" class="clickable-image image-99">
+                        <div class="hover-label">
+                            <span class="name">Auricularia auricula-judae</span>
+                            <span class="description">Commonly known as the "Jelly Ear" or "Wood Ear," this gelatinous fungus grows on decaying wood. Widely used in Asian cuisine, it has a crunchy texture and is believed to have medicinal properties.</span>
+                        </div>
+                    </div>
+                    <div class="image-container">
+                        <img src="assets/images/fungus_100.webp" alt="Nidula niveotomentosa" class="clickable-image image-100">
+                        <div class="hover-label">
+                            <span class="name">Nidula niveotomentosa</span>
+                            <span class="description">Known as the "White Woolly Nidus," this small bird’s nest fungus features tiny fruiting bodies resembling nests containing spores. It is often found on decaying wood and contributes to spore dispersal in forest ecosystems.</span>
+                        </div>
+                    </div>
+                    <div class="image-container">
+                        <img src="assets/images/fungus_101.webp" alt="Clavogaster virescens" class="clickable-image image-101">
+                        <div class="hover-label">
+                            <span class="name">Clavogaster virescens</span>
+                            <span class="description">This unusual puffball fungus has a greenish hue and grows in tropical and subtropical regions. *Clavogaster virescens* is notable for its unique morphology and ecological role as a decomposer.</span>
+                        </div>
+                    </div>
+                    <div class="image-container">
+                        <img src="assets/images/fungus_102.webp" alt="Rhodotus palmatus" class="clickable-image image-102">
+                        <div class="hover-label">
+                            <span class="name">Rhodotus palmatus</span>
+                            <span class="description">Known as the "Wrinkled Peach," this rare fungus is recognized by its salmon-pink, wrinkled cap. Found on decaying wood, *Rhodotus palmatus* is a prized find for mycologists and mushroom enthusiasts.</span>
+                        </div>
+                    </div>
+                    <div class="image-container">
+                        <img src="assets/images/fungus_103.webp" alt="Leptogium phyllocarpum" class="clickable-image image-103">
+                        <div class="hover-label">
+                            <span class="name">Leptogium phyllocarpum</span>
+                            <span class="description">This lichenized fungus grows on rocks or tree bark, forming thin, leafy structures. *Leptogium phyllocarpum* is an important bioindicator of air quality and plays a role in stabilizing ecosystems.</span>
+                        </div>
+                    </div>
+                    <div class="image-container">
+                        <img src="assets/images/fungus_104.webp" alt="Stropharia caerulea" class="clickable-image image-104">
+                        <div class="hover-label">
+                            <span class="name">Stropharia caerulea</span>
+                            <span class="description">Known as the "Blue Roundhead," this mushroom has a vibrant blue-green cap and grows in grassy areas or wood chips. *Stropharia caerulea* is non-toxic but not considered edible due to its bitter taste.</span>
+                        </div>
+                    </div>
+                    <div class="image-container">
+                        <img src="assets/images/fungus_105.webp" alt="Praearthromyces corneri" class="clickable-image image-105">
+                        <div class="hover-label">
+                            <span class="name">Praearthromyces corneri</span>
+                            <span class="description">A rare and unique fungus, *Praearthromyces corneri* features delicate, coral-like structures. Found in tropical forests, it thrives on decaying organic matter and contributes to nutrient recycling.</span>
+                        </div>
+                    </div>
+                    <div class="image-container">
+                        <img src="assets/images/fungus_106.webp" alt="Ramaria stricta" class="clickable-image image-106">
+                        <div class="hover-label">
+                            <span class="name">Ramaria stricta</span>
+                            <span class="description">This coral-like fungus forms upright, branched structures and is often found on decaying wood. *Ramaria stricta* plays a vital role in decomposing lignin and enriching forest soils.</span>
+                        </div>
+                    </div>
+                    <div class="image-container">
+                        <img src="assets/images/fungus_107.webp" alt="Syzygites megalocarpus" class="clickable-image image-107">
+                        <div class="hover-label">
+                            <span class="name">Syzygites megalocarpus</span>
+                            <span class="description">This mold-like fungus grows on decaying mushrooms and is known for its rapid growth and spore production. *Syzygites megalocarpus* is a fascinating example of fungal parasitism within forest ecosystems.</span>
+                        </div>
+                    </div>
+                    <div class="image-container">
+                        <img src="assets/images/fungus_108.webp" alt="Cladonia ecmocyna" class="clickable-image image-108">
+                        <div class="hover-label">
+                            <span class="name">Cladonia ecmocyna</span>
+                            <span class="description">This lichen forms intricate, grayish-green branching structures and is often found on soil or rocks. *Cladonia ecmocyna* contributes to soil formation and is a key species in nutrient-poor environments.</span>
+                        </div>
+                    </div>                    
+    </div>
+
+    <div id="saved-images" class="hidden">
+        <h2>Collected Fungus</h2>
+        <div id="saved-list">
+            <!-- Saved images will be appended here -->
+        </div>
+    </div>
+</div>
+
+<section id="fungi-index">
+    <h2>Fungi Index</h2>
+    <ul>
+        <li><a href="#fungus-1" onclick="highlightFungus('fungus-1')">Leratiomyces atrovirens</a></li>
+        <li><a href="#fungus-2" onclick="highlightFungus('fungus-2')">Hydnellum peckii</a></li>
+        <li><a href="#fungus-3" onclick="highlightFungus('fungus-3')">Schizophyllum commune</a></li>
+        <li><a href="#fungus-3" onclick="highlightFungus('fungus-3')">Schizophyllum commune</a></li>
+        <li><a href="#fungus-4" onclick="highlightFungus('fungus-4')">Mycena chlorophos</a></li>
+        <li><a href="#fungus-5" onclick="highlightFungus('fungus-5')">Cookeina tricholoma</a></li>
+        <li><a href="#fungus-6" onclick="highlightFungus('fungus-6')">Mitrula paludosa</a></li>
+        <li><a href="#fungus-7" onclick="highlightFungus('fungus-7')">Cladonia coccifera</a></li>
+        <li><a href="#fungus-8" onclick="highlightFungus('fungus-8')">Craterellus cornucopioides</a></li>
+        <li><a href="#fungus-9" onclick="highlightFungus('fungus-9')">Stemonitis</a></li>
+        <li><a href="#fungus-10" onclick="highlightFungus('fungus-10')">Clathrus archeri</a></li>
+    </ul>
+</section>
+
+
+<button id="print-button" class="print-icon" onclick="printAllFungi()">🖨</button>
+
+<!--<script src="https://unpkg.com/pagedjs/dist/paged.polyfill.js"></script> -->
+<script src="js/print.js"></script> <!-- Print-specific functions -->
+<script src="js/main.js"></script> <!-- Main custom script -->
+</body>
+</html>

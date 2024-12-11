@@ -1,0 +1,369 @@
+/* CSS RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-weight: normal;
+  font-size: 100%;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+img,
+video {
+  width: 100%;
+  display: block;
+}
+
+a {
+  color: black;
+}
+/* STYLES */
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Wrapper for scrollable content */
+#content-wrapper {
+  margin-top: 7vh;
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+}
+
+/* Image grid styles */
+#image-grid-container {
+  flex-grow: 1;
+  overflow: auto;
+  height: 100%;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#image-grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  width: 3000px; /* Adjust this value to control horizontal scroll */
+  padding: 0; /* Remove padding */
+  box-sizing: border-box;
+}
+
+.image-container img {
+  height: 150px;
+  width: auto;
+  transition: transform 0.3s ease-in-out;
+  margin: 0.5px;
+}
+
+.image-container:hover img {
+  transform: scale(1.1);
+  box-shadow: 0px 0px 25px 6px white; /* Adjust color and intensity */
+  transition: transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.hover-label {
+  position: absolute;
+  bottom: 10vh; /* Position the label near the bottom of the image */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Adjust to truly center */
+  padding: 5px 10px; /* Add padding for better readability */
+  color: white; /* Text color */
+  font-size: 14px; /* Adjust text size */
+  border-radius: 5px; /* Optional: Rounded corners */
+  text-align: center; /* Center text */
+  opacity: 0; /* Hidden by default */
+  transition: opacity 0.3s ease, bottom 0.3s ease; /* Smooth hover effect */
+}
+
+/* Show label on hover */
+.image-container:hover .hover-label {
+  opacity: 1; /* Make it visible */
+  bottom: 20px; /* Slight upward shift for hover effect */
+}
+
+/* Saved images styles - unchanged */
+#saved-images {
+  margin-top: 7vh;
+  width: 300px;
+  height: 100vh;
+  background-color: white;
+  padding: 20px;
+  box-shadow: -5px 0 10px rgba(0,0,0,0.1);
+  overflow-y: auto;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+#saved-images h2 {
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+#saved-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.saved-list-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.saved-list-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.saved-image-description {
+  margin-top: 5px;
+  font-size: 12px;
+  text-align: left; 
+}
+
+/* Basket button styles */
+.basket-button {
+  position: fixed;
+  top: 0px;
+  right: 3vh;
+  cursor: pointer;
+  background: transparent; /* Transparent background */
+  border: none;
+  font-size: 38px;
+  z-index: 1001;
+  color: white; /* Emoji color */
+  text-shadow: 0px 0px 20px rgba(255, 255, 255, 1),   /* Stronger inner glow */
+               0px 0px 40px rgba(255, 255, 255, 0.9), /* Medium layer for intensity */
+               0px 0px 60px rgba(255, 255, 255, 0.8), /* Larger outer layer for spread */
+               0px 0px 80px rgba(255, 255, 255, 0.7);
+}
+
+/* Hover effect for basket button */
+.basket-button:hover {
+  transform: scale(1.2); /* Slight zoom effect */
+  transition: transform 0.2s ease-in-out; /* Smooth transition */
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Style the checkbox to be hidden */
+.description-checkbox {
+  display: none;
+}
+
+/* Style for the name */
+.hover-label .name {
+  font-weight: bold;
+}
+
+/* Initially hide the description */
+.hover-label .description {
+  display: none;
+}
+
+/* Show both name and description in saved images */
+.saved-list-item .name,
+.saved-list-item .description {
+  display: block;
+}
+
+/* Style for the toggle label */
+.description-toggle-label {
+  display: inline-block;
+  font-size: 14px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+/* Default label text (when checkbox is unchecked) */
+.description-toggle-label::after {
+  content: "Show Descriptions";
+}
+
+/* Change label text to "Hide Descriptions" when checkbox is checked */
+.description-checkbox:checked + .description-toggle-label::after {
+  content: "Hide Descriptions";
+}
+
+/* Toggle visibility of descriptions based on checkbox */
+.description-checkbox:checked ~ #saved-list .saved-image-description {
+  display: block;
+}
+
+/* Hide descriptions by default */
+#saved-list .saved-image-description {
+  display: none;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+#index-button {
+  position: fixed;
+  top: -5px;
+  right: 73px;
+  padding: 10px 20px;
+  font-size: 38px;
+  border: none;
+  background-color: transparent; /* Transparent background */
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+/* Hover effect for index button */
+#index-button:hover {
+  transform: scale(1.2); /* Slight zoom effect */
+  transition: transform 0.2s ease-in-out; /* Smooth transition */
+}
+
+/* Style for Index section */
+#fungi-index {
+  display: none; /* Hidden initially */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center horizontally and vertically */
+  width: 400px; /* Adjust the width as needed */
+  max-height: 80%; /* Prevent overflowing */
+  overflow-y: auto; /* Enable vertical scrolling if content exceeds the height */
+  background: white;
+  border: 1px solid #ccc;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  border-radius: 8px; /* Optional rounded corners */
+}
+
+/* Highlight effect matching hover */
+.highlighted {
+  transform: scale(1.1); /* Slight zoom effect */
+  box-shadow: 0px 0px 25px 6px white; /* Adjust the glow effect */
+  transition: transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transition */
+}
+
+/* Hover effect for comparison */
+.image-container:hover img {
+  transform: scale(1.1);
+  box-shadow: 0px 0px 25px 6px white; /* Adjust color and intensity */
+  transition: transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+/* Remove title display when image is highlighted */
+.highlighted .hover-label {
+  opacity: 0 !important; /* Ensure the title is hidden */
+  transition: none; /* Prevent fade-in */
+}
+
+@keyframes highlight {
+  0% {
+      box-shadow: 0 0 10px #007BFF;
+  }
+  100% {
+      box-shadow: none;
+  }
+}
+
+/* Print Icon Styles */
+.print-icon {
+  position: fixed;
+  top: 3px; /* Adjust to match your layout */
+  right: 163px; /* Adjust spacing between other buttons */
+  font-size: 38px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+  color: white;
+  text-shadow: 0px 0px 20px rgba(255, 255, 255, 1),
+               0px 0px 40px rgba(255, 255, 255, 0.9),
+               0px 0px 60px rgba(255, 255, 255, 0.8),
+               0px 0px 80px rgba(255, 255, 255, 0.7);
+}
+
+.print-icon:hover {
+  transform: scale(1.2); /* Slight zoom effect */
+  transition: transform 0.2s ease-in-out; /* Smooth transition */
+}
+
+/* About Button */
+.about-button {
+  font-size: 38px; /* Match other buttons */
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  margin-right: 15px; /* Space between emojis */
+}
+
+/* Hover effect for the About button */
+.about-button:hover {
+  transform: scale(1.2);
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Hidden checkbox */
+.hidden-toggle {
+  display: none;
+}
+
+/* About Window */
+#about-window {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center horizontally and vertically */
+  width: 400px; /* Adjust width as needed */
+  max-height: 300px; /* Prevent overflow */
+  padding: 20px;
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 1002; /* Above other elements */
+  border-radius: 10px;
+  text-align: center;
+  overflow-y: auto; /* Enable scrolling if content overflows */
+}
+
+/* Show About Window when checkbox is checked */
+.hidden-toggle:checked ~ #about-window {
+  display: block;
+}
+
+/* Close Button */
+.close-button {
+  display: inline-block;
+  margin-top: 15px;
+  font-size: 16px;
+  padding: 8px 16px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+}
+
+/* Close Button Hover Effect */
+.close-button:hover {
+  background-color: #0056b3;
+  transition: background-color 0.2s ease-in-out;
+}
+
